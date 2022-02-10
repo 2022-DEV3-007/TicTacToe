@@ -4,12 +4,16 @@ import { useEffect, useState } from 'react';
 import { calculateWinner, calculateDraw } from "../../helper"
 
 function Game() {
+  //with player is it
   const [xIsNext, setXIsNext] = useState(true)
+
+  //file board with empty tiles
   const [board, setBoard] = useState(Array(9).fill(null))
   const [endGame, setEndGame] = useState(null)
   const win = calculateWinner(board)
   const draw = calculateDraw(board)
 
+  //handles the clicks of the tiles
   const handleClick = (pos) => {
     const boardCopy = [...board];
 
@@ -21,12 +25,14 @@ function Game() {
     setXIsNext(!xIsNext);
   }
 
+  //handle reset
   const handleReset = () => {
     setBoard(Array(9).fill(null))
     setEndGame(null);
     setXIsNext(true)
   }
 
+  //display winner or draw
   useEffect(() => {
     if (win) {
       setEndGame(`winner ${!xIsNext ? "X" : "0"}`)

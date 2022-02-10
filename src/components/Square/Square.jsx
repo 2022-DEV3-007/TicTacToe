@@ -1,8 +1,8 @@
 import './Square.css';
 
-function Square({value, onClick}) {
+function Square({value, onClick, index}) {
   return (
-    <button className='square__button' onClick={onClick}>{value}</button>
+    <button data-testid={`tile-button-${index}`} className='square__button' onClick={onClick}>{value}</button>
   );
 }
 

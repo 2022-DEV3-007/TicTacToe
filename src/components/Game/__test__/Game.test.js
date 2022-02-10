@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from "@testing-library/user-event";
 import Game from '../Game';
 
 it('should have the title tic tac toe game', () => {
@@ -14,7 +15,11 @@ it('should be X turn at the start of the game', () => {
 });
 
 it('should change to O turn after X clicked', () => {
-  throw new Error();
+  render(<Game />);
+  const buttonElement = screen.getByTestId("tile-button-1");
+  userEvent.click(buttonElement);
+  const textElement = screen.getByText(/It is O turn/i)
+  expect(textElement).toBeInTheDocument();
 });
 
 it('should update button to X after X clicked', () => {

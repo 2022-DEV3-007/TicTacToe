@@ -8,7 +8,9 @@ it('should have the title tic tac toe game', () => {
 });
 
 it('should be X turn at the start of the game', () => {
-  throw new Error();
+  render(<Game />);
+  const textElement = screen.getByText(/It is X turn/i);
+  expect(textElement).toBeInTheDocument();
 });
 
 it('should change to O turn after X clicked', () => {

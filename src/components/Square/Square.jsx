@@ -1,8 +1,8 @@
 import './Square.css';
 
-function Square() {
+function Square({value}) {
   return (
-    <h1>square</h1>
+    <button>{value}</button>
   );
 }
 

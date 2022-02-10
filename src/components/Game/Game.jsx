@@ -1,8 +1,13 @@
 import './Game.css';
+import Board from '../Board/Board';
 
 function Game() {
   return (
-    <h1>Tic-Tac-Toe Game</h1>
+    <div>
+      <h1>Tic-Tac-Toe Game</h1>
+      <Board />
+    </div>
+    
   );
 }
 

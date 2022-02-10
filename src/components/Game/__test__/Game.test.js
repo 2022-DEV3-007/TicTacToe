@@ -38,7 +38,19 @@ it('should not update button to O where X allready clicked', () => {
 });
 
 it('should end if a player wins', () => {
-  throw new Error();
+  render(<Game />);
+  const button1Element = screen.getByTestId("tile-button-0");
+  const button2Element = screen.getByTestId("tile-button-3");
+  const button3Element = screen.getByTestId("tile-button-1");
+  const button4Element = screen.getByTestId("tile-button-4");
+  const button5Element = screen.getByTestId("tile-button-2");
+  userEvent.click(button1Element);
+  userEvent.click(button2Element);
+  userEvent.click(button3Element);
+  userEvent.click(button4Element);
+  userEvent.click(button5Element);
+  const textElement = screen.getByText(/winner/i)
+  expect(textElement).toBeInTheDocument();
 });
 
 it('should end if board is full with no win', () => {
@@ -48,3 +60,9 @@ it('should end if board is full with no win', () => {
 it('should reset if u press play again', () => {
   throw new Error();
 });
+
+/* board
+  "0", "1", "2"
+  "3", "4", "5"
+  "6", "7", "8" 
+*/

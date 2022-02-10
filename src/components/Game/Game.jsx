@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 import { calculateWinner, calculateDraw } from "../../helper"
 
 function Game() {
-  //with player is it
+  //which player is it
   const [xIsNext, setXIsNext] = useState(true)
 
-  //file board with empty tiles
+  //fill board with empty tiles
   const [board, setBoard] = useState(Array(9).fill(null))
   const [endGame, setEndGame] = useState(null)
   const win = calculateWinner(board)
@@ -46,15 +46,17 @@ function Game() {
   return (
     <div className='game__container'>
       {endGame &&
-        <div>
-          <p>{endGame}</p>
-          <button onClick={() => handleReset()}>Play again</button>
+        <div className='game__endscreen'>
+          <div className='endscreen__content'>
+            <p className='endscreen__result'>{endGame}</p>
+            <button className='endscreen__button' onClick={() => handleReset()}>Play again</button>
+          </div>
         </div>
       }
 
       <h1 className='game__title'>Tic-Tac-Toe Game</h1>
       <Board onClick={handleClick} tiles={board}/>
-      <p>It is {xIsNext ? "X" : "O"} turn</p>
+      <p className='game__turn'>It is {xIsNext ? "X" : "O"} turn</p>
     </div>
     
   );

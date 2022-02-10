@@ -57,7 +57,7 @@ to see my tests of this project:<br/>
 
 ### Built With
 
-Tic-Tac-Toe is build with the folllowing technologies:
+Tic-Tac-Toe is built with the following technologies:
 
 * [React.js](https://reactjs.org/)
 * [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)

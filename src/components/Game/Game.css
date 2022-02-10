@@ -12,3 +12,47 @@
     text-align: center;
     margin-top: 15px;
 }
+
+.game__turn {
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.game__endscreen {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.endscreen__content {
+    width: 200px;
+    height: 100px;
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.endscreen__result {
+    margin: 0 0 10px;
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.endscreen__button {
+    background-color: #FFD78D;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}

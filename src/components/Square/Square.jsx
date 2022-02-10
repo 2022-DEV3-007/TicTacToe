@@ -2,7 +2,7 @@ import './Square.css';
 
 function Square({value}) {
   return (
-    <button>{value}</button>
+    <button className='square__button'>{value}</button>
   );
 }
 

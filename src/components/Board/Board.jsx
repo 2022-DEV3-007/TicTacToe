@@ -3,7 +3,7 @@ import Square from "../Square/Square"
 
 function Board() {
   return (
-    <div>
+    <div className='board__container'>
       <Square value={1}/>
       <Square value={2}/>
       <Square value={3}/>

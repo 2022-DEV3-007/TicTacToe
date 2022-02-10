@@ -3,8 +3,8 @@ import Board from '../Board/Board';
 
 function Game() {
   return (
-    <div>
-      <h1>Tic-Tac-Toe Game</h1>
+    <div className='game__container'>
+      <h1 className='game__title'>Tic-Tac-Toe Game</h1>
       <Board />
     </div>
     

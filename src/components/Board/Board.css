@@ -1,0 +1,9 @@
+.board__container {
+    width: 350px;
+    height: 350px;
+    border: 4px #F47174 solid;
+    border-radius: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}

@@ -1,0 +1,23 @@
+.square__button {
+    background-color: #FFEDCB;
+    border:#F47174 2px solid;
+    font-size: 45px;
+    font-weight: 600;
+    
+}
+
+.square__button:nth-child(1) {
+    border-top-left-radius: 10px; 
+}
+
+.square__button:nth-child(3) {
+    border-top-right-radius: 10px; 
+}
+
+.square__button:nth-child(7) {
+    border-bottom-left-radius: 10px; 
+}
+
+.square__button:nth-child(9) {
+    border-bottom-right-radius: 10px;  
+}

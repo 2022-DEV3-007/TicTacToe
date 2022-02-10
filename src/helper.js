@@ -18,3 +18,17 @@ export function calculateWinner(tiles) {
     }
     return null
   }
+
+export function calculateDraw(tiles) {
+  let count = 0;
+  tiles.forEach(tile => {
+    if (tile !== null)  {
+      count++
+    }
+  });
+  if (count === 9) {
+    return true
+  } else {
+    return null
+  }
+}

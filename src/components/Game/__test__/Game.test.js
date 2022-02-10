@@ -54,7 +54,27 @@ it('should end if a player wins', () => {
 });
 
 it('should end if board is full with no win', () => {
-  throw new Error();
+  render(<Game />);
+  const button1Element = screen.getByTestId("tile-button-0");
+  const button2Element = screen.getByTestId("tile-button-1");
+  const button3Element = screen.getByTestId("tile-button-4");
+  const button4Element = screen.getByTestId("tile-button-2");
+  const button5Element = screen.getByTestId("tile-button-5");
+  const button6Element = screen.getByTestId("tile-button-3");
+  const button7Element = screen.getByTestId("tile-button-7");
+  const button8Element = screen.getByTestId("tile-button-8");
+  const button9Element = screen.getByTestId("tile-button-6");
+  userEvent.click(button1Element);
+  userEvent.click(button2Element);
+  userEvent.click(button3Element);
+  userEvent.click(button4Element);
+  userEvent.click(button5Element);
+  userEvent.click(button6Element);
+  userEvent.click(button7Element);
+  userEvent.click(button8Element);
+  userEvent.click(button9Element);
+  const textElement = screen.getByText(/draw/i)
+  expect(textElement).toBeInTheDocument();
 });
 
 it('should reset if u press play again', () => {

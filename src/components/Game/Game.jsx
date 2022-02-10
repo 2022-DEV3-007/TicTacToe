@@ -1,18 +1,19 @@
 import './Game.css';
 import Board from '../Board/Board';
 import { useEffect, useState } from 'react';
-import { calculateWinner } from "../../helper"
+import { calculateWinner, calculateDraw } from "../../helper"
 
 function Game() {
   const [xIsNext, setXIsNext] = useState(true)
   const [board, setBoard] = useState(Array(9).fill(null))
   const [endGame, setEndGame] = useState(null)
   const win = calculateWinner(board)
+  const draw = calculateDraw(board)
 
   const handleClick = (pos) => {
     const boardCopy = [...board];
 
-    if (boardCopy[pos] || win) return;
+    if (boardCopy[pos] || win || draw) return;
 
     boardCopy[pos] = xIsNext ? "X" : "O";
 
@@ -24,7 +25,11 @@ function Game() {
     if (win) {
       setEndGame(`winner ${!xIsNext ? "X" : "0"}`)
     }
-  }, [win])
+
+    if (draw && !win) {
+      setEndGame("draw")
+    }
+  }, [win, draw])
 
   return (
     <div className='game__container'>

@@ -7,7 +7,13 @@ function Game() {
   const [board, setBoard] = useState(Array(9).fill(null))
 
   const handleClick = (pos) => {
-    console.log(pos)
+    const boardCopy = [...board];
+
+    if (boardCopy[pos]) return;
+
+    boardCopy[pos] = xIsNext ? "X" : "O";
+
+    setBoard(boardCopy);
     setXIsNext(!xIsNext);
   }
 

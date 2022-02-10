@@ -23,11 +23,18 @@ it('should change to O turn after X clicked', () => {
 });
 
 it('should update button to X after X clicked', () => {
-  throw new Error();
+  render(<Game />);
+  const buttonElement = screen.getByTestId("tile-button-1");
+  userEvent.click(buttonElement);
+  expect(buttonElement.textContent).toBe("X");
 });
 
 it('should not update button to O where X allready clicked', () => {
-  throw new Error();
+  render(<Game />);
+  const buttonElement = screen.getByTestId("tile-button-1");
+  userEvent.click(buttonElement);
+  userEvent.click(buttonElement);
+  expect(buttonElement.textContent).toBe("X");
 });
 
 it('should end if a player wins', () => {

@@ -21,6 +21,12 @@ function Game() {
     setXIsNext(!xIsNext);
   }
 
+  const handleReset = () => {
+    setBoard(Array(9).fill(null))
+    setEndGame(null);
+    setXIsNext(true)
+  }
+
   useEffect(() => {
     if (win) {
       setEndGame(`winner ${!xIsNext ? "X" : "0"}`)
@@ -36,6 +42,7 @@ function Game() {
       {endGame &&
         <div>
           <p>{endGame}</p>
+          <button onClick={() => handleReset()}>Play again</button>
         </div>
       }
 
